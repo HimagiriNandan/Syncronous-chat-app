@@ -14,12 +14,14 @@ const app = express();
 const port = process.env.PORT || 3001;
 const dbUrl = process.env.DATABASE_URL;
 
-app.use(cors({
-  origin: ["https://syncronous-chat-app-vgjz.vercel.app"],
+const corsOptions = {
+  origin: ["https://syncronous-chat-app-vgjz.vercel.app", "https://localhost:5173"],
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
   credentials: true
-}));
-app.options('*', cors());
+}
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use("/uploads/files", express.static("uploads/files"));
