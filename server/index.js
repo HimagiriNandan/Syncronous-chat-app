@@ -15,7 +15,7 @@ const port = process.env.PORT || 3001;
 const dbUrl = process.env.DATABASE_URL;
 
 app.use(cors({
-  origin: [process.env.ORIGIN],
+  origin: ["https://syncronous-chat-app-vgjz.vercel.app"],
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
   credentials: true
 }));
