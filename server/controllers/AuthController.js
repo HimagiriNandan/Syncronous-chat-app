@@ -20,6 +20,7 @@ export const signup = async (req, res, next)=>{
       maxAge,
       secure: true,
       sameSite: "None",
+      httpOnly: true,
     });
     return res.status(201).json({
       user: {
@@ -54,6 +55,7 @@ export const login = async (req, res, next)=>{
       maxAge,
       secure: true,
       sameSite: "None",
+      httpOnly: true,
     });
     return res.status(200).json({user: {
       id:user.id,
