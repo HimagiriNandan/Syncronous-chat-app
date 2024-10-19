@@ -19,6 +19,7 @@ app.use(cors({
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
   credentials: true
 }));
+app.options('*', cors());
 
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use("/uploads/files", express.static("uploads/files"));
